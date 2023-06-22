@@ -20,7 +20,7 @@ import  SidebarLink  from './SidebarLink.vue'
     <span class="collapse-icon icon" :class="{'rotate-180': collapsed}"  @click="toggleSidebar" >
       <font-awesome-icon icon="fa-solid fa-angles-left" />
     </span>
-    <SidebarLink to="/data/transaction" icon="fa-solid fa-table" title=" Data"> </SidebarLink>
+    <SidebarLink to="/category" icon="fa-solid fa-table" title=" Category"> </SidebarLink>
     <SidebarLink to="/transaction" icon="fa-solid fa-money-check-dollar" title=" Transaction"> </SidebarLink>
   </div>
 </template>

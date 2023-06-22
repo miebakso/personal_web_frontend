@@ -1,15 +1,16 @@
 <script setup>
-import MainPannel from '../MainPannel.vue'
 
 </script>
 
 <template>
     <div class="container-fluid">
-        <div class="row pannel">
+        <div class="row">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card pannel">
                     <div class="card-body">
-                        <MainPannel />
+                        <slot name="pannel">
+                            
+                        </slot>
                     </div>
                 </div>
             </div>
@@ -18,7 +19,9 @@ import MainPannel from '../MainPannel.vue'
             <div class="cold-md-12">
                 <div class="card">
                     <div class="card-body">
-                        
+                        <slot name="content">
+
+                        </slot>
                     </div>
                 </div>
             </div>
@@ -28,20 +31,6 @@ import MainPannel from '../MainPannel.vue'
 
 <style scoped>
 .pannel {
-    padding: 1em 0;
+    margin: 0.5em 0 0.5em 0 ;
 }
-.btn-custom {
-    margin-left: 1em;
-}
-/* .btn-custom {
-    background-color: #fbb62d;
-    border-color: #fbb62d;
-    border-radius: 7px;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    padding: 0 0.75em;
-} */
 </style>

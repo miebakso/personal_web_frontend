@@ -9,7 +9,7 @@ import {sidebarWidth} from './components/sidebar/state.js'
   <main>
     <Sidebar />
     <div class="main-screen" :style="{'margin-left': sidebarWidth}">
-      <router-view >
+      <router-view :key="$route.path">
 
       </router-view>
     </div>

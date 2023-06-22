@@ -1,6 +1,7 @@
 import { createApp } from 'vue/dist/vue.esm-bundler.js'
 import App from './App.vue'
 
+
 /* Font Awesome*/
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
