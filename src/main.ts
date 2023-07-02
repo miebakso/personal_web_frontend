@@ -13,10 +13,7 @@ import { faAngleDoubleLeft, faCreditCard, faTable, faMoneyCheckDollar } from '@f
 library.add(faAngleDoubleLeft, faTable, faCreditCard, faMoneyCheckDollar)
 
 
-
-
 import { router } from './router/route.js'
-
 
 createApp(App)
 .use(router)

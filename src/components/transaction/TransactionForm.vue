@@ -50,8 +50,8 @@ const data = reactive({
 watch(
   () => props.transaction,
   (transaction) => {
-    console.log('watcher')
-    console.log(transaction)
+    // console.log('watcher')
+    // console.log(transaction)
     data.date = new Date(transaction.date)
     data.description = transaction.description
     data.category_id = transaction.category_id
@@ -82,7 +82,7 @@ onMounted(async () => {
         </div>
 
         <select class="form-select marg" aria-label="Default select example">
-            <option v-for="category in categories" :value="category.name" :selected="category.id==data.category_id">
+            <option v-for="category in categories" :key="category.id" :value="category.name" :selected="category.id==data.category_id">
                 {{ category.name }}
             </option>
         </select>

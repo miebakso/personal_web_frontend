@@ -21,7 +21,7 @@ const props = defineProps({
         <div class="col-md-1">{{ transaction.id }} </div>
         <div class="col-md-2">{{ transaction.date }}</div>
         <div class="col-md-2">{{ transaction.category }}</div>
-        <div class="col-md-3">{{ description }}</div>
+        <div class="col-md-3">{{ transaction.description }}</div>
         <div class="col-md-1">{{ transaction.total }}</div>
         <div class="col-md-3">{{ transaction.notes }}</div>
     </div>

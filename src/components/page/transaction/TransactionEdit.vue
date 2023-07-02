@@ -15,8 +15,23 @@ const id = ref(router.currentRoute._value.params.id)
 const transaction =  ref({})
 
 async function updateTransaction(transaction) {
-    console.log('UPDATE TRANSACTION')
-    console.log(transaction)
+    // console.log(transaction)
+    // console.log(transaction.date.toISOString())
+    const trans_obj = {
+        "description": transaction.description,
+        "date": transaction.date.toISOString(),
+        "total": transaction.total,
+        "notes": transaction.notes,
+        "category_id": transaction.category_id
+    }
+    console.log(trans_obj)
+    await axios.put('http://127.0.0.1:8000/transactions/'+id.value, trans_obj)
+    .then(response => {
+        router.push({name: 'transaction.view', params: { id: id.value }})
+    })
+    .catch(error => {
+        console.log(error)
+    })  
 }
 
 const fetchTransactionById = async () => {
@@ -29,8 +44,6 @@ const fetchTransactionById = async () => {
             'total': response.data.total,
             'notes': response.data.notes
         }
-        console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxasdasdas')
-        console.log(trans_obj.date)
         transaction.value = trans_obj
     })
     .catch(error => {
@@ -48,8 +61,7 @@ onMounted(async () => {
     <BaseTemplate>
         <template #pannel>
             <div class="btn-group" role="group" aria-label="Edit/Delete buttons">
-                <PannelButton name="Edit" name_route="category.update" btn_css="btn btn-warning" />
-                <PannelButton name="Delete" name_route="category.delete" btn_css="btn btn-danger" />
+                Transaction Update
             </div>
         </template>
         <template #content>
